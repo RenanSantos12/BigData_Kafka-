@@ -1,23 +1,13 @@
-import  json
-import producer_settings
-from confluent_kafka import Producer
+from kafka import KafkaProducer
+from time import sleep
 
-class Kafka(object):
+producer = KafkaProducer(bootstrap_servers='localhost:9092')
 
-    @staticmethod
-    def json_producer(broker, name, topic):
-        p = Producer(producer_settings.producer_settings_jason(broker))
-        dados = name
-
-        for dado in dados:
-            try:
-                p.poll(0)
-                p.produce(
-                    topic=topic,
-                    value=json.dump(dado).encode('utf-8')
-                )
-            except Exception as e:
-                print(e)
-        p.flush()
-
-
+while True:
+    messagem = input('Digite uma mensagem para o kafka :')
+    if messagem.lower() == 'sair':
+        break
+    producer.send(topic='Renan_teste', value=messagem.encode('utf-8'))
+    producer.flush()
+    print(f"Mensagem enviada: {messagem}")
+    sleep(0.5)
