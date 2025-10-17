@@ -2,12 +2,11 @@ from kafka import KafkaProducer
 from time import sleep
 
 producer = KafkaProducer(bootstrap_servers='localhost:9092')
+arquivo_producer = r'C:\Users\raraujo\Desktop\Praticando Kafka\dados_exemplo (1).txt'
 
-while True:
-    messagem = input('Digite uma mensagem para o kafka :')
-    if messagem.lower() == 'sair':
-        break
-    producer.send(topic='Renan_teste', value=messagem.encode('utf-8'))
-    producer.flush()
-    print(f"Mensagem enviada: {messagem}")
-    sleep(0.5)
+with open(arquivo_producer, 'r') as file:
+    texto = file.readlines()
+    print(texto)
+
+for mesagem in texto:
+    producer.send('Renan_teste', mesagem.encode('utf-8'))

@@ -1,0 +1,23 @@
+Nome: Renan Santos
+Idade: 27
+Profissão: Desenvolvedor Python
+Cidade: São Paulo
+Email: renan.santos@example.com
+
+--- Projetos Recentes ---
+1. Automação de relatórios com Selenium e Telegram
+2. RPA de Indicadores Industriais
+3. API Flask para controle de tarefas
+4. Integração Kafka Producer/Consumer em Python
+
+--- Habilidades ---
+- Python (Selenium, Playwright, Kafka, Flask)
+- Git e GitHub
+- Automação de processos (RPA)
+- Tratamento de exceções e logs
+- Envio de alertas por Telegram e e-mail
+
+--- Objetivos ---
+- Aprimorar conhecimentos em back-end
+- Contribuir com projetos open-source
+- Especializar-se em arquitetura de automação
